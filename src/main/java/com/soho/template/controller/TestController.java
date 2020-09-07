@@ -40,4 +40,13 @@ public class TestController {
         return null;
     }
 
+    @PutMapping("add/{name}")
+    public String add(@PathVariable String name) {
+        String id = String.valueOf((data.size() + 1));
+        HashMap<String, String> obj = new HashMap<>();
+        obj.put(id, name);
+        data.add(obj);
+        return "success";
+    }
+
 }

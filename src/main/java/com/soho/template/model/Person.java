@@ -14,7 +14,7 @@ public class Person {
         return firstName;
     }
 
-    public Person setFirstName(String firstName) {
+    public Person firstName(String firstName) {
         this.firstName = firstName;
         return this;
     }
@@ -23,7 +23,7 @@ public class Person {
         return lastName;
     }
 
-    public Person setLastName(String lastName) {
+    public Person lastName(String lastName) {
         this.lastName = lastName;
         return this;
     }
@@ -32,7 +32,7 @@ public class Person {
         return age;
     }
 
-    public Person setAge(Integer age) {
+    public Person age(Integer age) {
         this.age = age;
         return this;
     }

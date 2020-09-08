@@ -10,9 +10,9 @@ import com.soho.template.model.Person;
 public class ChainCallsTest {
     public static void main(String[] args) {
         Person person = Person.create()
-                .setAge(18)
-                .setLastName("chan")
-                .setFirstName("soho");
+                .age(18)
+                .lastName("chan")
+                .firstName("soho");
         System.out.println(person);
     }
 }

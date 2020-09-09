@@ -9,7 +9,8 @@ import java.util.*;
  * @date 4/9/2020 18:12
  * @description TODO
  */
-@RestController("data")
+@RestController
+@RequestMapping("data")
 public class TestController {
     private static final int DATA_SIZE = 10;
     private static List<HashMap<String, String>> data = new ArrayList<>();
@@ -42,11 +43,21 @@ public class TestController {
 
     @PutMapping("add/{name}")
     public String add(@PathVariable String name) {
-        String id = String.valueOf((data.size() + 1));
+        String id = String.valueOf(data.size());
         HashMap<String, String> obj = new HashMap<>();
-        obj.put(id, name);
+        obj.put("id", id);
+        obj.put("name", name);
         data.add(obj);
         return "success";
+    }
+
+    @PostMapping("listTest")
+    public List<String> listTest(@RequestBody HashMap<String, List<String>> params) {
+        List<String> list = params.get("list");
+        for (String str: list) {
+            System.out.println(str);
+        }
+        return list;
     }
 
 }
